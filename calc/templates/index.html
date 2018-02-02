@@ -110,7 +110,17 @@
                     <legend>Fill Results :</legend>
                     {% for j in batch %}
                     <p for="marks[]">{{j.name}}</p>
-                    <input type="number" name="marks[]" min="4" max="10" placeholder="Out of 10" required>
+                    <input type="number" name="marks[]"id ="field" min="4" max="10" placeholder="Out of 10" required>
+                        <script>
+                                var max=10;
+                               $('input').keyup(function(){
+
+var inputValue = $(this).val();
+if(inputValue > max){
+    alert('greater!');
+    $(this).val('')
+}
+                        </script>
                     <input type="hidden" name="credit[]" value="{{j.credit}}">                   
                     {%endfor%}
                     <input type="hidden" name="marksform" value="1">
