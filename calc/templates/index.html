@@ -36,7 +36,6 @@
     animation-name: fadeIn;
     animation-duration: 0.4s
 }
-
 /* Modal Content */
 .modal-content {
     position: fixed;
@@ -53,7 +52,6 @@
     margin-left:auto;
     margin-right: auto;
         }
-
  #myModal-content
         {
                  margin: 0;
@@ -63,7 +61,6 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
         }
-
 /* The Close Button */
 .close {
     color: white;
@@ -71,14 +68,12 @@
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
 .modal-header {
     padding: 2px 16px;
     background-color: #795548;
@@ -86,9 +81,7 @@
     height: 40px;
     font-size:30px;
 }
-
 .modal-body { font-weight:bold;}
-
 .modal-footer {
     padding: 2px 16px;
     background-color: #795548;
@@ -143,7 +136,6 @@
                         <script>
                                 var max=10;
                                $('input').keyup(function(){
-
 var inputValue = $(this).val();
 if(inputValue > max){
     alert('greater!');
@@ -159,8 +151,7 @@ if(inputValue > max){
             </form>
             {% endif %}
         </div>
-<div id="myModal" class="modal" style="font-weight:bold;>
-
+<div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content" id ="myModal-content">
     <div class="modal-header">
@@ -173,12 +164,10 @@ if(inputValue > max){
       </center>
     </div>
     <div class="modal-footer">
-                             <center><h3>{{msg}}</h3></center>
+      <center><h2>{{msg}}</h2></center>
     </div>
   </div>
 </div>
-
-
         <!-- Calendar -->
                 <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
                 <script src="{% static 'js/jquery-ui1.js' %}"></script>
@@ -223,7 +212,6 @@ window.onclick = function(event) {
     }
 }
 </script>
-
     </div>
 </body>
 </html>
