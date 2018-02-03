@@ -79,7 +79,7 @@
 </head>
 <body>
     <div class="main">
-        <h1>CGPA Calculator</h1>
+        <h1 class="w3_field1">CGPA Calculator</h1>
         {%if val == 0%}
         <div class="agileinfo_main">
             <form id="testform" action="/" method="post" novalidate>
@@ -96,7 +96,7 @@
                     </select>
               <p for="country1" class="w3_field1">Choose Year</p>
                     <select id="weight" name="year" required>
-                        <option value="1">1st Year</option>
+                        <option value="1">1st</option>
                     </select>
                 </fieldset>
                 <input type="hidden" name="marksform" value="0">
@@ -110,7 +110,15 @@
                     <legend>Fill Results :</legend>
                     {% for j in batch %}
                     <p for="marks[]">{{j.name}}</p>
-                    <input type="number" name="marks[]" min="4" max="10" placeholder="Out of 10" required>
+                    <select id="country1" name="marks[]" required>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
                     <input type="hidden" name="credit[]" value="{{j.credit}}">                   
                     {%endfor%}
                     <input type="hidden" name="marksform" value="1">

@@ -12,10 +12,8 @@ def home(request):
 			branchs = request.POST['branch']
 			if (branchs == 'CE' or branchs == 'IT' or branchs == 'ME') and val=='1':
 				branchs = 'Computer Engineering'
-				print(branchs)
 			elif (branchs=='CE' or branchs == 'IT') and val=='2':
 				branchs = 'Computer Engineering'
-				print(branchs)
 			else:
 				branchs = 'Electronics and Communication Engineering'
 			branchs = branch.objects.filter(branch = branchs)
@@ -30,12 +28,18 @@ def home(request):
 				count+=int(credits[j])
 				tmarks+=int(credits[j])*int(i)
 				j+=1
-				print(tmarks)
 			pointer = tmarks/count
-			print(count,pointer)
 			pointer = round(pointer,2)
-			if(pointer>9):
-				msg = "👌"
+			if(pointer>=9):
+				msg = "WEll Done. Keep it up.👌"
+			elif pointer>=8:
+				msg = "Thodi or mehnat kro. 😌"
+			elif pointer>=7:
+				msg = "Padhai pr dhayan do. 😤"
+			elif pointer>=6:
+				msg="Tera kuch nhi ho skta. 😅"
+			elif pointer>=4:
+				msg="Tumse na ho payega. 😉"
 	else:
 		pass
 	return render(request,'index.html',{'batch':batc,'val':val,'err':err,'pointer':pointer,'msg':msg})
