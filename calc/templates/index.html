@@ -83,16 +83,19 @@
     padding: 2px 16px;
     background-color: #795548;
     color: white;
+    height: 40%;
+    font-size:140%;
 }
 
-.modal-body {padding: 2px 16px; font-weight:bold;}
+.modal-body { font-weight:bold;}
 
 .modal-footer {
     padding: 2px 16px;
     background-color: #795548;
     color: white;
+    height: 40%;
+    font-size:140%;
 }
-#ptr{ font-color:#725634; font-family: "Rammetto One"; font-weight:bold;}
 </style>
 </head>
 <body>
@@ -162,14 +165,15 @@ if(inputValue > max){
   <div class="modal-content" id ="myModal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Result</h2>
+            <center><h1>Your Estimated CGPA is:</h1></center>
     </div>
     <div class="modal-body">
-      <p style="font-weight:bold;">Your Estimated CGPA is:</p>
-    <div id="ptr">{{pointer}}</div>
+      
+    <center><div style=" text-align: center; font-size:1600%;font-family: "Rammetto One";font-color:#725634; font-weight:bold;">{{pointer}}</div>
+      </center>
     </div>
     <div class="modal-footer">
-      <h3>{{msg}}</h3>
+      <center><h2>{{msg}}</h2></center>
     </div>
   </div>
 </div>
