@@ -46,6 +46,24 @@
     animation-name: slideIn;
     animation-duration: 0.4s;
 }
+#myModal{
+        height: 200px;
+    position: relative;
+    border: 3px solid green;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+        }
+
+ #myModal-content
+        {
+                 margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+        }
 
 /* The Close Button */
 .close {
@@ -141,7 +159,7 @@ if(inputValue > max){
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
-  <div class="modal-content" >
+  <div class="modal-content" id ="myModal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
       <h2>Result</h2>
