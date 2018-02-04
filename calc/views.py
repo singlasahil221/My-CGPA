@@ -7,17 +7,19 @@ def home(request):
 		y=request.POST.get('marksform','')
 		if y=='0':
 			val=request.POST['year']
-
-			years = batch.objects.filter(year=val)
 			branchs = request.POST['branch']
-			if (branchs == 'CE' or branchs == 'IT' or branchs == 'ME') and val=='1':
+			if (((branchs == 'CE' or branchs == 'IT' or branchs == 'ME') and val=='1') or ((branchs=='ECE' or branchs=='EIC' or branchs=='EE') and val=='2')):
 				branchs = 'Computer Engineering'
-			elif (branchs=='CE' or branchs == 'IT') and val=='2':
-				branchs = 'Computer Engineering'
-			else:
+				val='1'
+			elif (((branchs == 'CE' or branchs == 'IT' or branchs == 'ME') and val=='2') or ((branchs=='ECE' or branchs=='EIC' or branchs=='EE') and val=='1')):
 				branchs = 'Electronics and Communication Engineering'
+				val='1'
+			elif (branchs=='CE' or branchs == 'IT') and val=='3':
+				branchs = 'Computer Engineering'
+			years = batch.objects.filter(semester=val)
 			branchs = branch.objects.filter(branch = branchs)
-			batc = subjects.objects.filter(year = years,branch = branchs).order_by('-credit')
+			batc = subjects.objects.filter(semester = years,branch = branchs).order_by('-credit')
+			print(batc)
 			val='1'
 		
 		else:
