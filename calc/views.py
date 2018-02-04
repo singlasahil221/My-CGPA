@@ -8,13 +8,13 @@ def home(request):
 		if y=='0':
 			val=request.POST['year']
 			branchs = request.POST['branch']
-			if (((branchs == 'CE' or branchs == 'IT' or branchs == 'ME') and val=='1') or ((branchs=='ECE' or branchs=='EIC' or branchs=='EE') and val=='2')):
+			if (((branchs == 'Computer Engineering' or branchs == 'Information Technology' or branchs == 'Mechanical Engineering') and val=='1') or ((branchs=='Electronics and Communication Engineering' or branchs=='EIC' or branchs=='Electrical Engineering') and val=='2')):
 				branchs = 'Computer Engineering'
 				val='1'
-			elif (((branchs == 'CE' or branchs == 'IT' or branchs == 'ME') and val=='2') or ((branchs=='ECE' or branchs=='EIC' or branchs=='EE') and val=='1')):
+			elif (((branchs == 'Computer Engineering' or branchs == 'Information Technology' or branchs == 'Mechanical Engineering') and val=='2') or ((branchs=='Electronics and Communication Engineering' or branchs=='EIC' or branchs=='Electrical Engineering') and val=='1')):
 				branchs = 'Electronics and Communication Engineering'
 				val='1'
-			elif (branchs=='CE' or branchs == 'IT') and val=='3':
+			elif (branchs=='Computer Engineering' or branchs == 'Information Technology') and val=='3':
 				branchs = 'Computer Engineering'
 			years = batch.objects.filter(semester=val)
 			branchs = branch.objects.filter(branch = branchs)
