@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from .models import batch, subjects,branch
+from .models import batch, subjects,branch,hits
 # Create your views here.
-hit=0
 
 def home(request):
 	batc,err,val,pointer,count,tmarks,msg='','',0,'',0,0,''
-	global hit
+	hitt = hits.objects.get(pk=3)
 	if request.method=='POST':
 		y=request.POST.get('marksform','')
 		if y=='0':
@@ -22,7 +21,10 @@ def home(request):
 			years = batch.objects.filter(semester=val)
 			branchs = branch.objects.filter(branch = branchs)
 			batc = subjects.objects.filter(semester = years,branch = branchs).order_by('-credit')
-			hit+=1
+			hitter = hits.objects.get(pk=3)
+			hitter.hit+=1
+			hitt = hitter.hit
+			hitter.save()
 			val='1'
 		
 		else:
@@ -47,4 +49,4 @@ def home(request):
 				msg="Tumse na ho payega. 😉"
 	else:
 		pass
-	return render(request,'index.html',{'batch':batc,'val':val,'err':err,'pointer':pointer,'msg':msg,'hits':hit})
+	return render(request,'index.html',{'batch':batc,'val':val,'err':err,'pointer':pointer,'msg':msg,'hits':hitt})
