@@ -1,6 +1,11 @@
 from django.db import models
 
 # Create your models here.
+class hits(models.Model):
+	hit = models.IntegerField()
+	def __str__(self):
+		return str(self.hit)
+	
 class batch(models.Model):
 	semester=models.CharField(max_length=10, null=True)
 	def __str__(self):
